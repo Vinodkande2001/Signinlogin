@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>welcome to signin page</h1>
+{% if msg %}
+<h3 style="color:red">enter proper details</h3>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>UserName:</td>
+            <td><input type="text" name="txtname"></td>
+        </tr>
+         <tr>
+            <td>Email</td>
+            <td><input type="email" name="txtmail"></td>
+        </tr>
+         <tr>
+            <td>Password</td>
+            <td><input type="password" name="pswd"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="register"></td>
+
+            <td><button><a href="{% url 'log' %}">Login</a></button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
